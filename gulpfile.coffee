@@ -148,6 +148,7 @@ gulp.task 'templates', ['clean:templates'], (done)->
 	site.disable 'default engines'
 	nunjucks.configure root: defaults.source.patterns
 	site.engine ['*', 'hbs', 'md', 'html'], nunjucks
+	site.data data
 	site.src path.join(defaults.source.pages, defaults.filters.templates)
 		.on 'data', (file)->
 			console.log 'Processing %s', file.path
